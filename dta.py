@@ -70,6 +70,7 @@ def dta(sample, reference, distance, threshold, resolution):
     kernel = numpy.mgrid[slices] * resolution
     kernel = numpy.sum(kernel**2, axis=0) # Distance squared from central voxel.
     kernel[numpy.where(numpy.sqrt(kernel) > distance)] = numpy.inf
+    kernel = kernel / distance**2
     
     footprint = numpy.ones_like(kernel)
     kernel = kernel.flatten()

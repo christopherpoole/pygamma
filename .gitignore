@@ -1,0 +1,5 @@
+*.pyc
+
+dist/
+build/
+pynist.egg-info/

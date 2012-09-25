@@ -18,9 +18,6 @@
 # 
 # 
 # Distance to Agreement using Gamma Evaluation
-# ============================================
-# 
-# File:      dta.py
 # 
 # Author:    Christopher M Poole
 # Email:     mail@christopherpoole.net
@@ -33,7 +30,7 @@ from math import ceil
 from scipy.ndimage.filters import generic_filter
 
 
-def dta(sample, reference, distance, threshold, resolution):
+def gamma_evaluation(sample, reference, distance, threshold, resolution):
     """
     Distance to Agreement between a sample and reference using gamma evaluation.
 

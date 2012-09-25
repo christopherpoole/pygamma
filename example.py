@@ -1,7 +1,7 @@
 import numpy
 import pylab
 
-from dta import dta
+from dta import gamma_evaluation 
 
 # Reference data with (2, 1) mm resolution
 reference = numpy.random.random((128, 256))
@@ -13,7 +13,7 @@ reference *= 100
 sample = reference * 1.03
 
 # Perform gamma evaluation at 4mm, 2%
-gamma_map = dta(sample, reference, 4., 2., (2, 1))
+gamma_map = gamma_evaluation(sample, reference, 4., 2., (2, 1))
 
 pylab.imshow(gamma_map, cmap='RdBu_r', aspect=2, vmin=0, vmax=2)
 pylab.colorbar()

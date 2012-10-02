@@ -1,6 +1,8 @@
 Distance to agreement calculations for radiotherapy dose distributions
 ======================================================================
 
+RESEARCH USE ONLY
+
 Currently an n-dimensional version of gamma evaluation is the only algorithm implemented. The resolution in the sample and reference can be difference, however each axis of sample and reference respectively must be the sample resolution.
 
     from dta import gamma_evaluation

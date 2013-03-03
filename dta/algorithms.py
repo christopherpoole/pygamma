@@ -30,7 +30,7 @@ from math import ceil
 from scipy.ndimage.filters import generic_filter
 
 
-def gamma_evaluation(sample, reference, distance, threshold, resolution):
+def gamma_evaluation(sample, reference, distance, threshold, resolution, signed=False):
     """
     Distance to Agreement between a sample and reference using gamma evaluation.
 
@@ -46,7 +46,9 @@ def gamma_evaluation(sample, reference, distance, threshold, resolution):
         The maximum passable deviation in `sample` and `reference`
     resolution : tuple
         The resolution of each axis of `sample` and `reference`
-        
+    signed : bool
+        Returns signed gamma for identifying hot/cold fails
+
     Returns
     -------
     gamma_map : ndarray
@@ -75,5 +77,10 @@ def gamma_evaluation(sample, reference, distance, threshold, resolution):
     
     gamma_map = generic_filter(values, \
         lambda vals: numpy.minimum.reduce(vals + kernel), footprint=footprint)
-    return numpy.sqrt(gamma_map)
+    gamma_map = numpy.sqrt(gamma_map)
+
+    if (signed):
+        return gamma_map * numpy.sign(sample - reference)
+    else:
+        return gamma_map
     

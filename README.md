@@ -15,3 +15,16 @@ Currently an n-dimensional version of gamma evaluation is the only algorithm imp
                                  distance, threshold,
                                  (sample_res, reference_res))
 
+## Signed Gamma Evaluation
+Signed gamma evaluation makes hot and cold spots obvious in the calculated gamma map, see here for details:
+
+    @article{mohammadi2012modification,
+      title={Modification of the gamma function for the recognition of over-and under-dose regions in three dimensions},
+      author={Mohammadi, Mohammad and Rostampour, Nima and Rutten, Thomas P},
+      journal={Journal of medical physics/Association of Medical Physicists of India},
+      volume={37},
+      number={4},
+      pages={200},
+      year={2012},
+      publisher={Medknow Publications}
+    }

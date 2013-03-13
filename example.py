@@ -13,7 +13,7 @@ reference -= 50
 # Sample data with a %3 shift on the reference
 sample = reference * 1.03
 
-# Perform gamma evaluation at 4mm, 2%
+# Perform gamma evaluation at 4mm, 2%, resoution x=2, y=1
 gamma_map = gamma_evaluation(sample, reference, 4., 2., (2, 1), signed=True)
 
 pylab.imshow(gamma_map, cmap='RdBu_r', aspect=2, vmin=-2, vmax=2)

@@ -84,7 +84,7 @@ def gamma_evaluation(sample, reference, distance, threshold, resolution, signed=
 
     # Divide by the square of the distance threshold, this is the cost penalty
     kernel = kernel / distance**2
-  
+ 
     # ndimag.generic_filter needs to know the footprint of the
     # kernel which must be flat
     footprint = numpy.ones_like(kernel)
